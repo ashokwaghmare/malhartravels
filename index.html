@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="main-post-list">
+
+  <ol class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}&hellip;</p>
+        <div class="post-list__meta"><time datetime="{{ post.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time> &#8226; 
+
+          <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
+
+          <h3>Services</h3>
+          <h4> 
+            <p>Company / Personal contracts for pick ups and drops.</p>
+            <p>Outstation cab service in pune</p>
+            <p>Pune city cab service and travels</p>
+          </h4>
+
+          <h3>Contact us</h3>
+          <h4> 
+
+          <p>Prashant Thorat</p>  
+          <p>M:8888920871</p>
+          <p>Email:prashant@malhartravels.in</p>
+
+          <p>Ashok Waghmare</p>
+          <p>M:7276338680</p>
+          <p>Email:ashok@malhartravels.in</p>
+
+         </h4>
+
+          <h3>Available cabs with driver</h3>
+          <h4> 
+            <p>Innova on rent in pune</p> <p>Indica on rent in pune</p> <p>swift on rent pune</p> <p>Tavera on rent in pune</p> <p>49 seater bus hire in pune</p> <p>17 seater bus on rent in pune</p> <p>12 seater tempo traveller in pune</p> <p>Toyota fortuner on rent</p>
+            <p>Etios on rent in pune</p>
+
+          </p>
+        </h4>
+
+
+
+
+
+        </div>
+        <hr class="post-list__divider">
+      </li>
+    {% endfor %}
+  </ol>
+
+  <hr class="post-list__divider ">
+
+  {% if paginator.previous_page or paginator.next_page %}
+      {% include pagination.html %}
+  {% endif %}
+
+</div>
